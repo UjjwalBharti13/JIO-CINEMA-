@@ -1,3 +1,4 @@
+// This is your CategoryList component
 "use client";
 import { useEffect, useState } from "react";
 import { media } from "../../lib/api";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { cn, getWatchUrl } from "../../lib/utils";
 import { InboxIcon } from "lucide-react";
 
+// Export CategoryList and CategoryListFallback (if this is your intent)
 const CategoryList = ({ fetcher, className }) => {
   const [categoryPost, setCategoryPost] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,3 +48,11 @@ const CategoryList = ({ fetcher, className }) => {
     </ul>
   );
 };
+
+// Named export
+export const CategoryListFallback = () => {
+  return <div>Loading...</div>;
+};
+
+// Default export
+export default CategoryList;
